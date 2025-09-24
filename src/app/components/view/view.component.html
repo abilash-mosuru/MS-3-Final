@@ -1,0 +1,34 @@
+<input type="text" (input) = "searchValue($event)" placeholder="Enter Name | Id">
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Course Name</th>
+        <th>Enrollment Count</th>
+        <th>Publish Date</th>
+        <th>Status</th>
+        <th>Date of Birth</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Seat Number</th>
+        <th colspan="3">Action</th>
+    </tr>
+    <tr *ngFor = "let s of final$ | async">
+        <td>{{s.id}}</td>
+        <td>{{s.courseName}}</td>
+        <td>{{s.enrollmentCount}}</td>
+        <td>{{s.publishDate}}</td>
+        <td>{{s.status}}</td>
+        <td>{{s.dateOfBirth}}</td>
+        <td>{{s.startDate}}</td>
+        <td>{{s.endDate}}</td>
+        <td>{{s.phone}}</td>
+        <td>{{s.email}}</td>
+        <td>{{s.seatNumber}}</td>
+        <td><a routerLink = "/viewById/{{s.id}}">View</a></td>
+        <td><a routerLink = "/deleteStudent/{{s.id}}">Delete</a></td>
+        <td><a routerLink = "/updateStudent/{{s.id}}">Update</a></td>
+        <!-- <td><input type="button" (click)="deleteRecord(s.id)" value="Delete"></td> -->
+    </tr>
+</table>
